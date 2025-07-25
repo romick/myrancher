@@ -1,3 +1,16 @@
 #cloud-config
+rancher:
+  environment:
+    EXTRA_CMDLINE: /init
+  network:
+    interfaces:
+      eth1:
+        address: 192.168.80.80/16
+        dhcp: false
+        gateway: 192.168.80.1
+        mtu: 1500
+  state:
+    dev: LABEL=RANCHER_STATE
+    wait: true
 ssh_authorized_keys:
   - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKMHzbtmXUG5/w8q+Ftzg81ILR1HaIS3rZSC5CRZp4D2vjAfqqBMFgKhkyIusmvWS01aKJ0R6Zv6G2AKDxPTvtV3e8g9j4PsOizDy7m7YBqFDshbavC/EM8tOf9eU1h6aLD+ho+XzS9JXZmzpXfixOTyQqokVsT/y6jNjIBr4nvhZ1IP2Kg6vtPgKDcwZRaVk1AGM3vwmEqlQb+/QykgTB50fUhiggbLJWKpSVYy0TNh3mmN4T5EdWsPSRCTQVr1Z8FH54VjunwIYb4TfqpyMcgQpEka7CPOZpEkCPMv4paju5bFT4nbHvw0+EfSdQuMU1WOCd3ZetM1AD3ZWPWvEJ romick@rancher
