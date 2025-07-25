@@ -3,6 +3,10 @@ rancher:
   environment:
     EXTRA_CMDLINE: /init
   network:
+    dns:
+      nameservers:
+      - 192.168.80.1
+      - 1.1.1.1
     interfaces:
       eth1:
         address: 192.168.80.80/16
